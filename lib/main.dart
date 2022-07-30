@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // ignore: prefer_const_constructors
-  runApp(MyApp());
+  runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Material(
-        child: Center(
-          child: Text('Hello World this is my first app'),
+    return MaterialApp(
+      title: 'Welcome to Flutter',
+      home: Scaffold(
+        appBar: AppBar(
+          title:const Text('App Bar'),
         ),
+        body: const Center(
+          child: Text('Hello World, This is my first Flutter App'),
+          
+        ),
+        drawer: Drawer(),
       ),
     );
   }
 }
-
