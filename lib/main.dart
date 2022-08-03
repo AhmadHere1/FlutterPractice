@@ -2,6 +2,7 @@
 
 import 'package:first_project/screens/home_page.dart';
 import 'package:first_project/screens/login_page.dart';
+import 'package:first_project/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 // import 'screens/login_page.dart';
@@ -16,19 +17,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-      )
-      ,
+      ),
+      debugShowCheckedModeBanner: true,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.black,
       ),
       routes: {
-        "/":(context) => LoginPage(),
-        "/home":(context) => HomePage(),
+        "/": (context) => LoginPage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
       },
     );
   }
