@@ -1,12 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:first_project/screens/home_page.dart';
-import 'package:first_project/screens/login_page.dart';
-import 'package:first_project/utils/routes.dart';
-import 'package:first_project/widgets/themes.dart';
+import 'package:first_project/src/features/authentication/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-// import 'screens/login_page.dart';
+import 'src/features/authentication/screens/full_good_signup.dart';
+import 'src/features/authentication/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,15 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(brightness: Brightness.light),
+      darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: ThemeMode.light,
-      theme: MyTheme.LightTheme(context),
       debugShowCheckedModeBanner: false,
-      darkTheme: MyTheme.DarkTheme(context),
-      routes: {
-        "/": (context) => HomePage(),
-        MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => LoginPage(),
-      },
+      home: FullGoodSignUp(),
     );
   }
 }
